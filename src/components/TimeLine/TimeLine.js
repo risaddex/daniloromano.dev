@@ -65,6 +65,7 @@ const Timeline = () => {
 
   return (
     <Section if="about">
+      <SectionDivider />
       <SectionTitle>About Me</SectionTitle>
       <SectionText>
         avoids a bug where content is covered up if coming from smaller screen
@@ -83,7 +84,7 @@ const Timeline = () => {
                 onClick={(e) => handleClick(e, index)}
               >
                 <CarouselItemTitle>
-                  {item.year}
+                  {`${item.year}`}
                   <CarouselItemImg
                     width="208"
                     height="6"

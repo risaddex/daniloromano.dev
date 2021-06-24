@@ -25,7 +25,7 @@ export const Section = styled.section<TSectionProps>`
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: ${(props) => props.nopadding ? "0" : "16px 16px 0" } ;
 
-    width: calc(100vw - 32px);
+    width: calc(100vw - 64px);
     flex-direction: column;
   }
 `
@@ -43,6 +43,8 @@ export const SectionTitle = styled.h2<TSectionTitleProps>`
   background: linear-gradient(121.57deg, #FFFFFF 18.77%, rgba(255, 255, 255, 0.66) 60.15%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  background-clip: text;
+  color:transparent;
   margin-bottom: 16px;
   padding: ${(props) => props.main ? '58px 0 16px' : '0'};
 
