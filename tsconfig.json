@@ -22,7 +22,7 @@
     "next-env.d.ts",
     "**/*.ts",
     "**/*.tsx"
-, "src/styles/GlobalComponents/Button.js"  ],
+, "src/styles/GlobalComponents/Button.js", "src/components/Projects/Projects.js"  ],
   "exclude": [
     "node_modules"
   ]
