@@ -60,6 +60,15 @@ export const NavLink = styled.a`
     color: #fff;
     opacity: 1;
     cursor: pointer;
+    ::after {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 5px;
+      border-radius: 1px;
+      color: white;
+      background: linear-gradient(270deg, #13adc7 0%, #945dd6 100%);
+    }
   }
   @media ${(props) => props.theme.breakpoints.sm} {
     padding: 0.5rem;

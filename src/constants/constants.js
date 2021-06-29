@@ -44,3 +44,9 @@ export const TimeLineData = [
   { year: 2020, text: 'Shared my projects with the world', },
   { year: 2021, text: 'Started my own platform', },
 ];
+
+export const socialLinks = {
+  github:'https://github.com/risaddex',
+  linkedIn:'https://www.linkedin.com/in/danilo-romano-290180163',
+  twitter: 'https://twitter.com/risaddex'
+}

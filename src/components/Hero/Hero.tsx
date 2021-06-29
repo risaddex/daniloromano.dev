@@ -16,11 +16,11 @@ const Hero = () => (
         My Personal Portfolio
       </SectionTitle>
       <SectionText>
-        Loren Ipsun dolor ammet, etc, etc,etc,etc Loren Ipsun dolor ammet, etc,
-        etc,etc,etc
+        Here you will find the most relevant projects I've been participating,
+        technologies I've been working with, and more about me.
       </SectionText>
-      <Button onClick={() => (window.location.href = 'https://google.com')}>
-        Learn More
+      <Button onClick={() => (window.location.href = '/#projects')}>
+        Get Started
       </Button>
     </LeftSection>
   </Section>
