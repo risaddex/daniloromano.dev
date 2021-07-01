@@ -38,9 +38,8 @@ const Projects = () => {
         {repos?.map(
           ({name, language,description, tags_url, html_url, homepage }) => (
             <BlogCard key={name}>
-              <Img src={'http://placekitten.com/g/200/300'} />
+              <Img src={`https://raw.githubusercontent.com/risaddex/${name}/main/.github/cover.jpg`}/>
               <TitleContent>
-                {/* @ts-ignore */}
                 <HeaderThree hasTitle>{name}</HeaderThree>
                 <Hr />
               </TitleContent>

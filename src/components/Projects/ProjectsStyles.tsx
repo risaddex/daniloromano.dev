@@ -39,7 +39,7 @@ export const TitleContent = styled.div`
 `;
 
 
-export const HeaderThree = styled.h3`
+export const HeaderThree = styled.h3<{hasTitle:boolean}>`
   font-weight: 500;
   letter-spacing: 2px;
   color: #9cc9e3;
@@ -95,6 +95,8 @@ padding:1rem 1.5rem;
 background: #6b3030;
 border-radius: 15px;
 transition: 0.5s;
+cursor:pointer;
+
 &:hover{
   background: #801414;
 
