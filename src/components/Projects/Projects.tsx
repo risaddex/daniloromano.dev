@@ -35,7 +35,7 @@ const Projects = () => {
       <SectionDivider />
       <SectionTitle main>Projects</SectionTitle>
       <GridContainer>
-        {repos?.map(
+        {repos?.filter((rep) => rep.name !== 'daniloromano.dev').map(
           ({name, language,description, tags_url, html_url, homepage }) => (
             <BlogCard key={name}>
               <Img src={`https://raw.githubusercontent.com/risaddex/${name}/main/.github/cover.jpg`}/>
