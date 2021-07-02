@@ -17,10 +17,10 @@ import {
 const Header = () => (
   <Container>
     <Div1>
-      <Link href="/">
+      <Link href="https://daniloromano.dev">
         <a
           style={{ display: 'flex', alignItems: 'center', color: 'white' }}
-          href=""
+          href="https://daniloromano.dev"
         >
           <DiCssdeck size="3rem" /> <Span>DCR</Span>
         </a>

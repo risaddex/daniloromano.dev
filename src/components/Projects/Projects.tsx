@@ -38,13 +38,14 @@ const Projects = () => {
         {repos?.filter((rep) => rep.name !== 'daniloromano.dev').map(
           ({name, language,description, tags_url, html_url, homepage }) => (
             <BlogCard key={name}>
-              <Img src={`https://raw.githubusercontent.com/risaddex/${name}/main/.github/cover.jpg`}/>
+              <Img src={`https://raw.githubusercontent.com/risaddex/${name}/main/.github/cover.png`}/>
               <TitleContent>
                 <HeaderThree hasTitle>{name}</HeaderThree>
                 <Hr />
               </TitleContent>
               <CardInfo>{description}</CardInfo>
               <div>
+                <a href="http://" target="_blank" rel="noopener noreferrer"></a>
                 <TitleContent>Stack</TitleContent>
                 <TagList>
                   {/* {tags.map((tag, id) => (
@@ -54,8 +55,8 @@ const Projects = () => {
                 </TagList>
               </div>
               <UtilityList>
-                <ExternalLinks href={homepage}>Code</ExternalLinks>
-                <ExternalLinks href={html_url}>Source</ExternalLinks>
+                <ExternalLinks href={homepage} target="_blank" rel="noopener noreferrer">Code</ExternalLinks>
+                <ExternalLinks href={html_url} target="_blank" rel="noopener noreferrer">Source</ExternalLinks>
               </UtilityList>
             </BlogCard>
           )
