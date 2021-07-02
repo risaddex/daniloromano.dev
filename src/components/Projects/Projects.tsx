@@ -1,5 +1,11 @@
-import React, { useEffect, useState } from 'react';
-import Image from 'next/image'
+import Image from 'next/image';
+import React from 'react';
+import {
+  Section,
+  SectionDivider,
+  SectionTitle
+} from '../../styles/GlobalComponents';
+import { TGitHubRepo } from '../../utils/fetchProjects';
 import {
   BlogCard,
   CardInfo,
@@ -10,24 +16,13 @@ import {
   Tag,
   TagList,
   TitleContent,
-  UtilityList,
+  UtilityList
 } from './ProjectsStyles';
-import {
-  Section,
-  SectionDivider,
-  SectionTitle,
-} from '../../styles/GlobalComponents';
-import { projects } from '../../constants/constants';
-import { fetchGitHubRepos, TGitHubRepo } from '../../utils/fetchProjects';
 
-const Projects = () => {
-  const [repos, setRepos] = useState<TGitHubRepo[]>();
-  useEffect(() => {
-    (async() => {
-      const data = await fetchGitHubRepos();
-    setRepos(data);
-    })()
-  }, []);
+type ProjectsProps = {
+  repos:TGitHubRepo[]
+}
+const Projects = ({repos}:ProjectsProps) => {
 
   return (
     <Section nopadding id="projects">

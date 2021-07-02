@@ -1,13 +1,23 @@
-import Projects from "../../components/Projects/Projects"
-import { Layout } from "../../layout/Layout"
+import ProjectComponent from '../../components/Projects/Projects';
+import { Layout } from '../../layout/Layout';
+import { fetchGitHubRepos, TGitHubRepo } from '../../utils/fetchProjects';
 
-const Proj = () => {
-
+const Projects = ({ repos }: { repos: TGitHubRepo[] }) => {
   return (
     <Layout>
-      <Projects />
+      <ProjectComponent repos={repos} />
     </Layout>
-  )
-}
+  );
+};
 
-export default Proj
+export default Projects;
+
+export const getStaticProps = async () => {
+  const repos = await fetchGitHubRepos();
+
+  return {
+    props: {
+      repos,
+    },
+  };
+};
