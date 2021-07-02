@@ -7,13 +7,14 @@ import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
 import Head from 'next/head'
+import { NextSeo } from 'next-seo';
 
 const Home = () => {
   return (
     <Layout>
-      <Head>
-        <title>Danilo Cerqueira Romano</title>
-      </Head>
+      <NextSeo
+        title="Home"
+       />
       <Section grid>
         <Hero />
         <BgAnimation />

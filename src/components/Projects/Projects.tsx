@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-
+import Image from 'next/image'
 import {
   BlogCard,
   CardInfo,
@@ -11,7 +11,6 @@ import {
   TagList,
   TitleContent,
   UtilityList,
-  Img,
 } from './ProjectsStyles';
 import {
   Section,
@@ -38,7 +37,14 @@ const Projects = () => {
         {repos?.filter((rep) => rep.name !== 'daniloromano.dev').map(
           ({name, language,description, tags_url, html_url, homepage }) => (
             <BlogCard key={name}>
-              <Img src={`https://raw.githubusercontent.com/risaddex/${name}/main/.github/cover.png`}/>
+              <Image
+                src={`https://raw.githubusercontent.com/risaddex/${name}/main/.github/cover.png`}
+                alt={name}
+                width={400}
+                height={280}
+                objectPosition={"top"}
+                objectFit="cover"
+              />
               <TitleContent>
                 <HeaderThree hasTitle>{name}</HeaderThree>
                 <Hr />

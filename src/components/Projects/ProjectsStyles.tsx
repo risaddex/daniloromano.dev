@@ -26,6 +26,7 @@ export const BlogCard = styled.div`
   border-radius: 10px;
   box-shadow: 3px 3px 20px rgba(80, 78, 78, 0.5);
   text-align: center;
+  text-overflow: ellipsis;
   width: 400px;
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
@@ -73,6 +74,7 @@ export const CardInfo = styled.p`
   font-style: 2rem;
   line-height: 24px;
   text-align: justify;
+  word-break: break-all;
   @media ${(props) => props.theme.breakpoints.sm} {
     padding:.3rem
   
