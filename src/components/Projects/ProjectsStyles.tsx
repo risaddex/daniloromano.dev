@@ -3,8 +3,8 @@ import styled from 'styled-components';
 export const Img = styled.img`
   width:100%;
   height:100%;
-  object-fit: cover;
-  overflow: hidden;
+  /* object-fit: cover; */
+  /* overflow: hidden; */
 `
 
 export const GridContainer = styled.section`
@@ -42,7 +42,6 @@ export const TitleContent = styled.div`
 
 export const HeaderThree = styled.h3<{hasTitle:boolean}>`
   font-weight: 500;
-  letter-spacing: 2px;
   color: #9cc9e3;
   padding: .5rem 0;
   font-size: ${(props) => props.hasTitle ? '3rem' : '2rem'};
@@ -51,9 +50,9 @@ export const HeaderThree = styled.h3<{hasTitle:boolean}>`
 export const Hr = styled.hr`
   width: 50px;
   height: 3px;
-  margin: 20px auto;
+  margin: 1rem auto;
   border: 0;
-  background: #d0bb57;
+  background: white;
 `;
 
 export const Intro = styled.div`
@@ -69,15 +68,16 @@ export const Intro = styled.div`
 
 export const CardInfo = styled.p`
   width: 100%;
-  padding: 0 50px;
+  padding: 0 2rem;
   color: #e4e6e7;
-  font-style: 2rem;
-  line-height: 24px;
+  font-size: 1em;
+  /* line-height: 24px; */
   text-align: justify;
   word-break: break-all;
+  text-overflow: ellipsis;
+
   @media ${(props) => props.theme.breakpoints.sm} {
     padding:.3rem
-  
 }
 `;
 

@@ -24,9 +24,9 @@ const TOTAL_CAROUSEL_COUNT = TimeLineData.length;
 
 const Timeline = () => {
   const [activeItem, setActiveItem] = useState(0);
-  const carouselRef = useRef();
+  const carouselRef = useRef<HTMLUListElement>();
 
-  const scroll = (node, left) => {
+  const scroll = (node:HTMLElement, left:number) => {
     return node.scrollTo({ left, behavior: 'smooth' });
   };
 
@@ -65,7 +65,7 @@ const Timeline = () => {
   }, []);
 
   return (
-    <Section if="about">
+    <Section>
       <SectionDivider />
       <SectionTitle>About Me</SectionTitle>
       <SectionText>

@@ -185,7 +185,7 @@ export interface IButtonBackProps {
   alt?:string
   form?:any
   disabled?:boolean
-};
+}
 
 export const ButtonBack = styled.div<IButtonBackProps>`
   width: ${({ alt }) => alt ? '150px' : '262px'};

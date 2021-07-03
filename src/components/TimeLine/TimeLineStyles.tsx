@@ -32,14 +32,18 @@ export const CarouselContainer = styled.ul`
     margin-bottom: 8px;
   }
 `
-export const CarouselMobileScrollNode = styled.div`
+export const CarouselMobileScrollNode = styled.div<{final:boolean}>`
   @media ${props => props.theme.breakpoints.sm} {
     display: flex;
     min-width: ${({ final }) => final ? `120%;` : `min-content`}
   }
 `
+interface CarouselProps {
+  index:number;
+  active:number
 
-export const CarouselItem = styled.div`
+}
+export const CarouselItem = styled.div<CarouselProps>`
   background: #0F1624;
   border-radius: 3px;
   max-width: 196px;
@@ -73,6 +77,7 @@ export const CarouselItemTitle = styled.h4`
   /* This gradient is different due to the size of the Title container, it must transition sooner to be visible on the text */
   background: linear-gradient(121.57deg, #FFFFFF 10%, rgba(255, 255, 255, 0.66) 30.15%);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   margin-bottom: 8px;
 
@@ -90,6 +95,7 @@ export const CarouselItemTitle = styled.h4`
 export const CarouselItemImg = styled.svg`
   margin-left: 21px;
   -webkit-mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
+  mask-image: linear-gradient(to right, rgba(0,0,0,1), rgba(0,0,0,0));
   width: 100%;
 
   @media ${props => props.theme.breakpoints.sm} {
@@ -130,7 +136,7 @@ export const CarouselButtons = styled.div`
   }
 `
 
-export const CarouselButton = styled.button`
+export const CarouselButton = styled.button<CarouselProps>`
   box-sizing: border-box;
   background: none;
   padding: 4px;
@@ -145,7 +151,7 @@ export const CarouselButton = styled.button`
   }
 `
 
-export const CarouselButtonDot = styled.div`
+export const CarouselButtonDot = styled.div<{active:number}>`
   background-color: white;
   border-radius: 10px;
   margin: auto;

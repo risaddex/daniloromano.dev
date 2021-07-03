@@ -22,14 +22,14 @@ import {
 type ProjectsProps = {
   repos:TGitHubRepo[]
 }
-const Projects = ({repos}:ProjectsProps) => {
-
+const Projects = ({ repos }:ProjectsProps) => {
+  const lastRepos = repos.slice(0,4);
   return (
     <Section nopadding id="projects">
       <SectionDivider />
-      <SectionTitle main>Projects</SectionTitle>
+      <SectionTitle main>Last Projects</SectionTitle>
       <GridContainer>
-        {repos?.filter((rep) => rep.name !== 'daniloromano.dev').map(
+        {lastRepos.map(
           ({name, language,description, tags_url, html_url, homepage }) => (
             <BlogCard key={name}>
               <Image

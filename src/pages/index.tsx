@@ -34,10 +34,10 @@ export default Home;
 
 export const getStaticProps =  async () => {
   const repos = await fetchGitHubRepos();
-
+  const filteredRepos = repos.filter((rep) => rep.name !== 'daniloromano.dev')
   return {
     props: {
-      repos,
+      repos:filteredRepos,
     }
   }
 }
