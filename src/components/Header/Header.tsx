@@ -29,22 +29,22 @@ const Header = () => (
     <Div2>
       <li>
         <Link href="#projects">
-          <NavLink>Projects</NavLink>
+          <NavLink>Projetos</NavLink>
         </Link>
       </li>
       <li>
         <Link href="#technologies">
-          <NavLink>Technologies</NavLink>
+          <NavLink>Tecnologias</NavLink>
         </Link>
       </li>
       <li>
         <Link href="#about">
-          <NavLink>About</NavLink>
+          <NavLink>Sobre</NavLink>
         </Link>
       </li>
       <li>
-        <Link href="#about">
-          <NavLink>Blog</NavLink>
+        <Link href="#">
+          <NavLink onClick={() => alert('em breve :)')}>Blog</NavLink>
         </Link>
       </li>
     </Div2>
