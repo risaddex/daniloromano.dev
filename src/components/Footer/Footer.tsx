@@ -1,5 +1,7 @@
 import React from 'react';
-import { AiFillGithub, AiFillInstagram, AiFillLinkedin } from 'react-icons/ai';
+import { AiFillGithub, AiFillLinkedin, AiFillMail } from 'react-icons/ai';
+import {FaDiscord, FaTelegramPlane, FaTwitter} from 'react-icons/fa'
+import { socialLinks } from '../../constants/constants';
 
 import { SocialIcons } from '../Header/HeaderStyles';
 import {
@@ -19,27 +21,49 @@ const Footer = () => {
     <FooterWrapper>
       <LinkList>
         <LinkColumn>
-          <LinkTitle>Call</LinkTitle>
-          <LinkItem href="tel:111-111-1111">tel:111-111-1111</LinkItem>
+          <LinkTitle>Telegram</LinkTitle>
+          <LinkItem target="_blank" rel="noopener noreferrer" href="https://t.me/risaddex">
+          <SocialIcons>
+              <FaTelegramPlane size="2rem" />
+            </SocialIcons>
+            @risaddex
+            </LinkItem>
         </LinkColumn>
         <LinkColumn>
+          
           <LinkTitle>Email</LinkTitle>
-          <LinkItem href="mailto:emal@gmail.com">mail@gmail.com</LinkItem>
+          <LinkItem href="mailto:risaddex@gmail.com" target="_blank" rel="noopener noreferrer">
+            <SocialIcons>
+              <AiFillMail aria-hidden size="2rem" />
+            </SocialIcons>
+            risaddex@gmail.com
+          </LinkItem>
+        </LinkColumn>
+
+        <LinkColumn>
+          
+          <LinkTitle>Email</LinkTitle>
+          <LinkItem href="https://discord.com/users/175278447378038785" target="_blank" rel="noopener noreferrer">
+            <SocialIcons>
+              <FaDiscord aria-hidden size="2rem" />
+            </SocialIcons>
+            risaddex#5566
+          </LinkItem>
         </LinkColumn>
       </LinkList>
       <SocialIconsContainer>
         <CompanyContainer>
-          <Slogan>Innovating one project at a time</Slogan>
+          <Slogan>Feito com <span>❤️</span> por <a href="https://github.com/risaddex/daniloromano.dev" target="_blank" rel="noopener noreferrer">@risaddex</a></Slogan>
         </CompanyContainer>
         <SocialContainer>
-          <SocialIcons>
+          <SocialIcons href={socialLinks.github}>
             <AiFillGithub size="3rem" />
           </SocialIcons>
-          <SocialIcons>
+          <SocialIcons href={socialLinks.linkedIn}>
             <AiFillLinkedin size="3rem" />
           </SocialIcons>
-          <SocialIcons>
-            <AiFillInstagram size="3rem" />
+          <SocialIcons href={socialLinks.twitter}>
+            <FaTwitter size="3rem" />
           </SocialIcons>
         </SocialContainer>
       </SocialIconsContainer>

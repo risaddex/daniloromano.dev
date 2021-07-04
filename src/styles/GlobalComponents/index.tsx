@@ -3,13 +3,14 @@ import styled from 'styled-components'
 type TSectionProps = {
   grid?: boolean
   row?: boolean
-  nopadding?:boolean
+  noPadding?:boolean
   main?:boolean
+  full?:boolean
 }
 export const Section = styled.section<TSectionProps>`
   display: ${(props) => props.grid ? "grid" : "flex" };
   flex-direction: ${(props) => props.row ? "row" : "column" };
-  padding: ${(props) => props.nopadding ? "0" : "32px 48px 0" } ;
+  padding: ${(props) => props.noPadding ? "0" : "32px 48px 0" } ;
   margin: 0 auto;
   max-width: 1040px;
   box-sizing: content-box;
@@ -23,8 +24,8 @@ export const Section = styled.section<TSectionProps>`
   }
 
   @media ${(props) => props.theme.breakpoints.sm} {
-    padding: ${(props) => props.nopadding ? "0" : "16px 16px 0" } ;
-
+    padding: ${(props) => props.noPadding ? "0" : "16px 16px 0" };
+    height: ${(props) => props.full ? "100vh" : "initial" };
     width: calc(100vw - 64px);
     flex-direction: column;
   }
@@ -69,10 +70,25 @@ export const SectionTitle = styled.h2<TSectionTitleProps>`
 export const SectionText = styled.p`
   max-width: 800px;
   font-size: 24px;
-  line-height: 40px;
+  /* line-height: 40px; */
   font-weight: 300;
   padding-bottom: 3.6rem;
   color: rgba(255, 255, 255, 0.5);
+
+  a {
+    display: inline-block;
+    color: rgba(255, 255, 255, 1);
+
+    &:hover::after {
+      content: '';
+      width: 2em;
+      height: 3px;
+      display: block;
+      background: #FFF;
+      position: absolute;
+    
+    }
+  }
 
   @media ${(props) => props.theme.breakpoints.md} {
     max-width: 670px;
@@ -214,7 +230,7 @@ export const ButtonBack = styled.div<IButtonBackProps>`
 
   @media ${(props) => props.theme.breakpoints.sm} {
     width: 100%;
-    height: 32px;
+    height: 48px;
     font-size: 14px;
     margin-bottom: ${({ alt }) => alt ? '0' : '32px'};
   }

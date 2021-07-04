@@ -88,6 +88,18 @@ export const Slogan = styled.p`
 	font-size: 18px;
 	line-height: 30px;
 	padding: 1rem;
+  
+  span {
+    color: initial;
+  }
+
+  a {
+    color: white;
+
+    :hover {
+      color: blueviolet;
+    }
+  }
 
 	@media ${props => props.theme.breakpoints.md}{
 		font-size: 16px;

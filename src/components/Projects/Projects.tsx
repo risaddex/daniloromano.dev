@@ -25,9 +25,9 @@ type ProjectsProps = {
 const Projects = ({ repos }:ProjectsProps) => {
   const lastRepos = repos.slice(0,4);
   return (
-    <Section nopadding id="projects">
+    <Section noPadding id="projects">
       <SectionDivider />
-      <SectionTitle main>Last Projects</SectionTitle>
+      <SectionTitle>Últimos Projetos</SectionTitle>
       <GridContainer>
         {lastRepos.map(
           ({name, language,description, tags_url, html_url, homepage }) => (
@@ -46,8 +46,9 @@ const Projects = ({ repos }:ProjectsProps) => {
               </TitleContent>
               <CardInfo>{description}</CardInfo>
               <div>
-                <a href="http://" target="_blank" rel="noopener noreferrer"></a>
-                <TitleContent>Stack</TitleContent>
+                <br />
+                {/* <a href="http://" target="_blank" rel="noopener noreferrer"></a> */}
+                <TitleContent>Tecnologias</TitleContent>
                 <TagList>
                   {/* {tags.map((tag, id) => (
                     <Tag key={id}>{tag}</Tag>

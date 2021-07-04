@@ -9,18 +9,18 @@ import Button from '../../styles/GlobalComponents/Button';
 import { LeftSection } from './HeroStyles';
 
 const Hero = () => (
-  <Section row nopadding>
+  <Section row noPadding>
     <LeftSection>
       <SectionTitle main center>
-        Welcome to <br />
-        My Personal Portfolio
+        Olá <br />
+        Eu sou o Danilo
       </SectionTitle>
       <SectionText>
-        Here you will find the most relevant projects I've been participating,
-        technologies I've been working with, and more about me.
+        Aqui você encontrará os projetos mais relevantes que tenho participado,
+        tecnologias que tenho utilizado, e mais sobre mim.
       </SectionText>
       <Button onClick={() => (window.location.href = '/#projects')}>
-        Get Started
+        Começar
       </Button>
     </LeftSection>
   </Section>

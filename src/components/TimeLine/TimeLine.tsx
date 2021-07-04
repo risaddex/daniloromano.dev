@@ -67,9 +67,9 @@ const Timeline = () => {
   return (
     <Section>
       <SectionDivider />
-      <SectionTitle>About Me</SectionTitle>
+      <SectionTitle>Sobre Mim</SectionTitle>
       <SectionText>
-        avoids a bug where content is covered up if coming from smaller screen
+        Adotando <a href="https://en.wikipedia.org/wiki/KISS_principle" target="_blank" rel="noopener noreferrer">KISS </a> para a vida.
       </SectionText>
       <CarouselContainer ref={carouselRef} onScroll={handleScroll}>
         <>

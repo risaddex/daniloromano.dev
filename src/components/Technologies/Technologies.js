@@ -17,9 +17,9 @@ import {
 const Technologies = () => (
   <Section id="tech">
     <SectionDivider />
-    <SectionTitle>Technologies</SectionTitle>
+    <SectionTitle>Tecnologias</SectionTitle>
     <SectionText>
-      I've worked with a range a technologies in the web..
+      Algumas das tecnologias que já foram utilizadas por mim :)
     </SectionText>
     <List>
       <ListItem>
@@ -27,7 +27,7 @@ const Technologies = () => (
         <ListContainer>
           <ListTitle>Front-End</ListTitle>
           <ListParagraph>
-            Experience with <br />
+            Experiência com <br />
             React.js
           </ListParagraph>
         </ListContainer>
@@ -37,7 +37,7 @@ const Technologies = () => (
         <ListContainer>
           <ListTitle>Back-End</ListTitle>
           <ListParagraph>
-            Experience with <br />
+          Experiência com <br />
             Node.js
           </ListParagraph>
         </ListContainer>
@@ -45,10 +45,10 @@ const Technologies = () => (
       <ListItem>
         <DiZend size="3rem" />
         <ListContainer>
-          <ListTitle>UI/UX</ListTitle>
+          <ListTitle>Mobile</ListTitle>
           <ListParagraph>
-            Experience with <br />
-            Figma
+          Experiência com <br />
+            Flutter
           </ListParagraph>
         </ListContainer>
       </ListItem>
