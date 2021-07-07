@@ -21,12 +21,13 @@ export type TGitHubRepo = {
 
 const GITHUB_USERNAME = 'risaddex';
 
-const sortMode = 'indexed';
-const page = 1;
+const SORT_MODE = 'indexed';
+const PAGE = 1;
+const LIMIT = 7;
 
 export async function fetchGitHubRepos(): Promise<TGitHubRepo[]> {
   const res = await fetch(
-    `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=${sortMode}&page=${page}`,
+    `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=${SORT_MODE}&page=${PAGE}&per_page=${LIMIT}`,
     // required in order to get the list of topics
     { headers: { Accept: 'application/vnd.github.mercy-preview+json' } }
   );

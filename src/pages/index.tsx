@@ -33,6 +33,7 @@ const Home = ({repos}:IHomeProps) => {
 export default Home;
 
 export const getStaticProps =  async () => {
+  // fetch last 7 repos, but only render 7 since the bellow filter is applied
   const repos = await fetchGitHubRepos();
   const filteredRepos = repos.filter((rep) => rep.name !== 'daniloromano.dev')
   return {

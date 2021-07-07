@@ -1,4 +1,4 @@
-import Image from 'next/image';
+import {Image} from '../../layout/Image';
 import React from 'react';
 import {
   Section,
@@ -18,48 +18,66 @@ import {
   TitleContent,
   UtilityList
 } from './ProjectsStyles';
+import { COLOR_TAGS, getColorContrast } from '../../utils/getColors';
+import { GitHubCorner } from './GitHubCorner';
 
 type ProjectsProps = {
   repos:TGitHubRepo[]
 }
+
+const colorNames = Object.keys(COLOR_TAGS);
 const Projects = ({ repos }:ProjectsProps) => {
-  const lastRepos = repos.slice(0,4);
+  // map repository topic colors
+  const lastRepos = repos.map(({topics, ...rest}) => ({
+    ...rest,
+    topics: topics.map(topic => ({
+      name: topic,
+      color: colorNames.includes(topic) ? getColorContrast(COLOR_TAGS[topic]) : '#000',
+      bgColor: COLOR_TAGS[topic] ?? COLOR_TAGS.default
+    }))
+  }));
+
   return (
     <Section noPadding id="projects">
       <SectionDivider />
       <SectionTitle>Últimos Projetos</SectionTitle>
       <GridContainer>
         {lastRepos.map(
-          ({name, language,description, tags_url, html_url, homepage }) => (
+          ({name, description, topics, html_url, homepage }, i) => (
             <BlogCard key={name}>
+              <a href={homepage} target="_blank" rel="noopener noreferrer">
               <Image
                 src={`https://raw.githubusercontent.com/risaddex/${name}/main/.github/cover.png`}
                 alt={name}
                 width={400}
+                fallbackSrc="/notavailable.jpg"
                 height={280}
                 objectPosition={"top"}
                 objectFit="cover"
+                
               />
+              </a>
               <TitleContent>
                 <HeaderThree hasTitle>{name}</HeaderThree>
                 <Hr />
               </TitleContent>
               <CardInfo>{description}</CardInfo>
-              <div>
+              <>
                 <br />
                 {/* <a href="http://" target="_blank" rel="noopener noreferrer"></a> */}
                 <TitleContent>Tecnologias</TitleContent>
                 <TagList>
-                  {/* {tags.map((tag, id) => (
-                    <Tag key={id}>{tag}</Tag>
-                  ))} */}
-                  <Tag>{language}</Tag>
+                  {topics?.map(({bgColor, color, name}) => (
+                    <Tag color={color} bgColor={bgColor}  key={name}>{name}</Tag>
+                  ))}
+                  {/* <Tag>{language}</Tag> */}
                 </TagList>
-              </div>
-              <UtilityList>
+              </>
+              {/* <UtilityList>
                 <ExternalLinks href={homepage} target="_blank" rel="noopener noreferrer">Code</ExternalLinks>
                 <ExternalLinks href={html_url} target="_blank" rel="noopener noreferrer">Source</ExternalLinks>
-              </UtilityList>
+              </UtilityList> */}
+              <GitHubCorner projectUrl={html_url}/>
             </BlogCard>
           )
         )}
