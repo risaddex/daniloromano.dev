@@ -23,7 +23,7 @@ const GITHUB_USERNAME = 'risaddex';
 
 const SORT_MODE = 'indexed';
 const PAGE = 1;
-const LIMIT = 7;
+const LIMIT = 10;
 
 export async function fetchGitHubRepos(): Promise<TGitHubRepo[]> {
   const res = await fetch(
