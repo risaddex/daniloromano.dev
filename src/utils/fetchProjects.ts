@@ -1,5 +1,5 @@
 
-export type TGitHubRepo = {
+export type GitHubRepo = {
   name: string;
   html_url: string;
   description: string;
@@ -25,13 +25,13 @@ const SORT_MODE = 'indexed';
 const PAGE = 1;
 const LIMIT = 10;
 
-export async function fetchGitHubRepos(): Promise<TGitHubRepo[]> {
+export async function fetchGitHubRepos(): Promise<GitHubRepo[]> {
   const res = await fetch(
     `https://api.github.com/users/${GITHUB_USERNAME}/repos?sort=${SORT_MODE}&page=${PAGE}&per_page=${LIMIT}`,
     // required in order to get the list of topics
     { headers: { Accept: 'application/vnd.github.mercy-preview+json' } }
   );
-  const repositoryData = (await res.json()) as TGitHubRepo[];
+  const repositoryData = (await res.json()) as GitHubRepo[];
 
   return repositoryData;
 }

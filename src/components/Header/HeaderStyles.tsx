@@ -1,3 +1,4 @@
+import { IconBaseProps, IconType } from 'react-icons';
 import { IoIosArrowDropdown } from 'react-icons/io';
 import styled from 'styled-components';
 
@@ -103,7 +104,7 @@ export const ContactDropDown = styled.button`
   }
 `;
 
-export const NavProductsIcon = styled(IoIosArrowDropdown)`
+export const NavProductsIcon = styled(IoIosArrowDropdown)<{ isOpen: boolean }>`
   margin-left: 8px;
   display: flex;
   align-self: center;
@@ -123,7 +124,7 @@ export const NavProductsIcon = styled(IoIosArrowDropdown)`
 
 // Social Icons
 
-export const SocialIcons = styled.a`
+const SocialIcons = styled.a`
   transition: 0.3s ease;
   color: white;
   border-radius: 50px;
@@ -134,3 +135,22 @@ export const SocialIcons = styled.a`
     cursor: pointer;
   }
 `;
+
+export const SocialIcon = ({
+  url,
+  icon: Icon,
+  iconProps,
+}: {
+  url?: string;
+  icon: IconType;
+  iconProps?: IconBaseProps;
+}) => {
+  const props = url
+    ? { href: url, rel: 'noopener noreferrer', target: '_blank' }
+    : {};
+  return (
+    <SocialIcons {...props}>
+      <Icon size="3rem" {...iconProps} />
+    </SocialIcons>
+  );
+};

@@ -1,8 +1,8 @@
 import ProjectComponent from '../../components/Projects/Projects';
 import { Layout } from '../../layout/Layout';
-import { fetchGitHubRepos, TGitHubRepo } from '../../utils/fetchProjects';
+import { fetchGitHubRepos, GitHubRepo } from '../../utils/fetchProjects';
 
-const Projects = ({ repos }: { repos: TGitHubRepo[] }) => {
+const Projects = ({ repos }: { repos: GitHubRepo[] }) => {
   return (
     <Layout>
       <ProjectComponent repos={repos} />

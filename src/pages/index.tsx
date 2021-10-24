@@ -7,10 +7,10 @@ import Technologies from '../components/Technologies/Technologies';
 import Timeline from '../components/TimeLine/TimeLine';
 import { Layout } from '../layout/Layout';
 import { Section } from '../styles/GlobalComponents';
-import { fetchGitHubRepos, TGitHubRepo } from '../utils/fetchProjects';
+import { fetchGitHubRepos, GitHubRepo } from '../utils/fetchProjects';
 
 interface IHomeProps {
-  repos:TGitHubRepo[]
+  repos: GitHubRepo[];
 }
 const Home = ({repos}:IHomeProps) => {
   return (

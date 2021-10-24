@@ -9,10 +9,9 @@ import {
   Div2,
   Div3,
   NavLink,
-  SocialIcons,
-  Span
+  SocialIcon,
+  Span,
 } from './HeaderStyles';
-
 
 const Header = () => (
   <Container>
@@ -48,19 +47,12 @@ const Header = () => (
         </Link>
       </li>
     </Div2>
-
     <Div3>
-      <SocialIcons href={socialLinks.github}>
-        <AiFillGithub size="3rem" />
-      </SocialIcons>
-      <SocialIcons href={socialLinks.linkedIn}>
-        <AiFillLinkedin size="3rem" />
-      </SocialIcons>
-      <SocialIcons href={socialLinks.twitter}>
-        <AiOutlineTwitter size="3rem" />
-      </SocialIcons>
+      <SocialIcon url={socialLinks.github} icon={AiFillGithub} />
+      <SocialIcon icon={AiFillLinkedin} url={socialLinks.linkedIn} />
+      <SocialIcon icon={AiOutlineTwitter} url={socialLinks.twitter} />
     </Div3>
   </Container>
-)
+);
 
 export default Header
